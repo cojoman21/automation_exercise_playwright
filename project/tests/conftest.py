@@ -1,24 +1,31 @@
 import re
 
 import pytest
-from playwright.sync_api import Page, Playwright
+from playwright.sync_api import Playwright
+
+
+@pytest.fixture(scope="session")
+def api_context(playwright):
+    context = playwright.request.new_context(base_url="https://automationexercise.com")
+    yield context
+    context.dispose()
 
 
 @pytest.fixture(scope="session", autouse=True)
-def cleanup_session_user_api(page: Page, session_user):
+def cleanup_session_user_api(api_context, session_user):
     yield
 
     print(f"\nCleaning up session user:{session_user['email']}")
-    page.request.delete(
-        "https://automationexercise.com/api/deleteAccount",
+    api_context.delete(
+        "/api/deleteAccount",
         form={"email": session_user["email"], "password": session_user["password"]},
     )
 
 
 @pytest.fixture(autouse=True)
-def cleanup_random_user_api(page: Page, random_user):
-    page.request.delete(
-        "https://automationexercise.com/api/deleteAccount",
+def cleanup_random_user_api(api_context, random_user):
+    api_context.delete(
+        "/api/deleteAccount",
         form={"email": random_user["email"], "password": random_user["password"]},
     )
     yield
