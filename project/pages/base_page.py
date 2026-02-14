@@ -32,6 +32,7 @@ class BasePage:
             )
 
         # if READY_LOCATOR attribute exists, check if it is visible
+        self.READY_LOCATOR.wait_for(state="visible", timeout=10000)
         self.assert_visible(self.READY_LOCATOR)
         # return self for chaining
         return self

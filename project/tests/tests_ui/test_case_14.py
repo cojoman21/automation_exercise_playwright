@@ -1,6 +1,5 @@
 from playwright.sync_api import Page
 
-from project.data.test_data import NEW_USER
 from project.pages.account_created_page import AccountCreatedPage
 from project.pages.account_deleted_page import AccountDeletedPage
 from project.pages.auth_page import AuthPage

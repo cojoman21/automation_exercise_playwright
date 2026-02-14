@@ -1,7 +1,16 @@
 import re
 
 import pytest
-from playwright.sync_api import Playwright
+from playwright.sync_api import Page, Playwright
+
+
+@pytest.fixture(autouse=True)
+def cleanup_user_api(page: Page, random_user):
+    page.request.delete(
+        "https://automationexercise.com/api/deleteAccount",
+        form={"email": random_user["email"], "password": random_user["password"]},
+    )
+    yield
 
 
 @pytest.fixture(scope="session")

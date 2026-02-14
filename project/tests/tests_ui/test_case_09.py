@@ -21,7 +21,7 @@ def test_search_product(page: Page):
     products_page.search_for("Men Tshirt")
 
     # 7. Verify 'SEARCHED PRODUCTS' is visible
-    products_page.assert_visible(products_page.SEARCHED_PRODUCTS)
+    products_page.check_searched_products_heading_visible()
 
     # 8. Verify all the products related to search are visible
     products_page.validate_search_results("Men Tshirt")
