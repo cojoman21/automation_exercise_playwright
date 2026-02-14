@@ -1,5 +1,6 @@
-from data.test_data import EXISTING_USER
 from playwright.sync_api import Page
+
+from project.data.test_data import EXISTING_USER
 
 
 def test_post_to_verify_login_with_valid_details(page: Page):

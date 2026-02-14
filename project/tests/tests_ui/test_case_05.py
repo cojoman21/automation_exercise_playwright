@@ -1,6 +1,6 @@
-from data.test_data import EXISTING_USER
 from playwright.sync_api import Page
 
+from project.data.test_data import EXISTING_USER
 from project.pages.auth_page import AuthPage
 from project.pages.home_page import HomePage
 
