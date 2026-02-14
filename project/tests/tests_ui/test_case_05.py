@@ -1,7 +1,8 @@
 from data.test_data import EXISTING_USER
-from pages.auth_page import AuthPage
-from pages.home_page import HomePage
 from playwright.sync_api import Page
+
+from project.pages.auth_page import AuthPage
+from project.pages.home_page import HomePage
 
 
 def test_register_user_with_existing_email(page: Page):

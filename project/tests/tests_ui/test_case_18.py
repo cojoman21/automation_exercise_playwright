@@ -1,5 +1,6 @@
-from pages.home_page import HomePage
 from playwright.sync_api import Page
+
+from project.pages.home_page import HomePage
 
 
 def test_view_category_products(page: Page):

@@ -1,7 +1,8 @@
-from pages.home_page import HomePage
-from pages.product_details_page import ProductDetailsPage
-from pages.products_page import ProductsPage
 from playwright.sync_api import Page
+
+from project.pages.home_page import HomePage
+from project.pages.product_details_page import ProductDetailsPage
+from project.pages.products_page import ProductsPage
 
 
 def test_add_review_on_product(page: Page, random_user):

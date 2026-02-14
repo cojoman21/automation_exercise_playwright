@@ -1,6 +1,7 @@
-from pages.auth_page import AuthPage
-from pages.home_page import HomePage
 from playwright.sync_api import Page
+
+from project.pages.auth_page import AuthPage
+from project.pages.home_page import HomePage
 
 
 def test_login_with_incorrect_email_and_password(page: Page, random_user):

@@ -1,0 +1,17 @@
+automation_exercise_playwright\
+    project\
+        \data # some data for specific tests like login with existing user
+        \downloads # used for downloads during tests
+        \github
+        \pages
+        \test-results
+        \tests
+    .venv\
+    .gitignore
+    .python-version
+    main.py
+    pyproject.toml
+    pytest.ini
+    requirements.txt
+    upload_test.txt
+    uv.lock

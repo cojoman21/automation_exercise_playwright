@@ -1,6 +1,7 @@
-from pages.home_page import HomePage
-from pages.test_cases_page import TestCasesPage
 from playwright.sync_api import Page
+
+from project.pages.home_page import HomePage
+from project.pages.test_cases_page import TestCasesPage
 
 
 def test_test_cases_page(page: Page):

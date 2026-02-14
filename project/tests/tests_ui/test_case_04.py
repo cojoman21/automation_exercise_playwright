@@ -1,7 +1,8 @@
 from data.test_data import EXISTING_USER
-from pages.auth_page import AuthPage
-from pages.home_page import HomePage
 from playwright.sync_api import Page, expect
+
+from project.pages.auth_page import AuthPage
+from project.pages.home_page import HomePage
 
 
 def test_logout_user(page: Page):

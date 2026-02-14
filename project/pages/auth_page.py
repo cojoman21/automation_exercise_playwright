@@ -2,11 +2,11 @@ from typing import Self
 
 from playwright.sync_api import Locator, Page, expect
 
-from pages.base_page import BasePage
-from pages.components.login_section import LoginSection
-from pages.components.navigation_module import NavigationModule
-from pages.components.signup_section import SignupSection
-from pages.components.subscription_section import SubscriptionSection
+from project.pages.base_page import BasePage
+from project.pages.components.login_section import LoginSection
+from project.pages.components.navigation_module import NavigationModule
+from project.pages.components.signup_section import SignupSection
+from project.pages.components.subscription_section import SubscriptionSection
 
 
 class AuthPage(

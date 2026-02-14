@@ -1,6 +1,7 @@
-from pages.contact_page import ContactPage
-from pages.home_page import HomePage
 from playwright.sync_api import Page
+
+from project.pages.contact_page import ContactPage
+from project.pages.home_page import HomePage
 
 
 def test_contact_us_form(page: Page, random_user):

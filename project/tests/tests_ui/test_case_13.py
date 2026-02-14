@@ -1,7 +1,8 @@
-from pages.cart_page import CartPage
-from pages.home_page import HomePage
-from pages.product_details_page import ProductDetailsPage
 from playwright.sync_api import Page
+
+from project.pages.cart_page import CartPage
+from project.pages.home_page import HomePage
+from project.pages.product_details_page import ProductDetailsPage
 
 
 def test_verify_product_quantity_in_cart(page: Page):

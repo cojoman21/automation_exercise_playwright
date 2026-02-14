@@ -2,12 +2,12 @@ from typing import Self
 
 from playwright.sync_api import Locator, Page, expect
 
-from pages.base_page import BasePage
-from pages.components.brands_section import BrandsSection
-from pages.components.category_section import CategorySection
-from pages.components.navigation_module import NavigationModule
-from pages.components.products_section import ProductsSection
-from pages.components.subscription_section import SubscriptionSection
+from project.pages.base_page import BasePage
+from project.pages.components.brands_section import BrandsSection
+from project.pages.components.category_section import CategorySection
+from project.pages.components.navigation_module import NavigationModule
+from project.pages.components.products_section import ProductsSection
+from project.pages.components.subscription_section import SubscriptionSection
 
 
 class ProductsPage(

@@ -1,11 +1,12 @@
-from pages.account_created_page import AccountCreatedPage
-from pages.account_deleted_page import AccountDeletedPage
-from pages.auth_page import AuthPage
-from pages.cart_page import CartPage
-from pages.checkout_page import CheckoutPage
-from pages.components.signup_form import SignupForm
-from pages.home_page import HomePage
 from playwright.sync_api import Page
+
+from project.pages.account_created_page import AccountCreatedPage
+from project.pages.account_deleted_page import AccountDeletedPage
+from project.pages.auth_page import AuthPage
+from project.pages.cart_page import CartPage
+from project.pages.checkout_page import CheckoutPage
+from project.pages.components.signup_form import SignupForm
+from project.pages.home_page import HomePage
 
 
 def test_verify_address_details_in_checkout_page(page: Page, random_user):

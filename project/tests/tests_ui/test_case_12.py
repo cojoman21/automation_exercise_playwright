@@ -1,7 +1,8 @@
-from pages.cart_page import CartPage
-from pages.home_page import HomePage
-from pages.products_page import ProductsPage
 from playwright.sync_api import Page
+
+from project.pages.cart_page import CartPage
+from project.pages.home_page import HomePage
+from project.pages.products_page import ProductsPage
 
 
 def test_add_products_in_cart(page: Page):

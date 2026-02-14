@@ -1,9 +1,10 @@
 from data.test_data import EXISTING_USER
-from pages.auth_page import AuthPage
-from pages.cart_page import CartPage
-from pages.home_page import HomePage
-from pages.products_page import ProductsPage
 from playwright.sync_api import Page
+
+from project.pages.auth_page import AuthPage
+from project.pages.cart_page import CartPage
+from project.pages.home_page import HomePage
+from project.pages.products_page import ProductsPage
 
 
 def test_search_products_and_verify_cart_after_login(page: Page):

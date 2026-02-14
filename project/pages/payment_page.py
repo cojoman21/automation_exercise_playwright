@@ -2,9 +2,9 @@ from typing import Self
 
 from playwright.sync_api import Locator, Page
 
-from pages.base_page import BasePage
-from pages.components.navigation_module import NavigationModule
-from pages.components.subscription_section import SubscriptionSection
+from project.pages.base_page import BasePage
+from project.pages.components.navigation_module import NavigationModule
+from project.pages.components.subscription_section import SubscriptionSection
 
 
 class PaymentPage(BasePage, NavigationModule, SubscriptionSection):

@@ -1,6 +1,7 @@
-from pages.cart_page import CartPage
-from pages.home_page import HomePage
 from playwright.sync_api import Page, expect
+
+from project.pages.cart_page import CartPage
+from project.pages.home_page import HomePage
 
 
 def test_remove_products_from_cart(page: Page):

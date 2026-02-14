@@ -1,6 +1,7 @@
-from pages.home_page import HomePage
-from pages.products_page import ProductsPage
 from playwright.sync_api import Page
+
+from project.pages.home_page import HomePage
+from project.pages.products_page import ProductsPage
 
 
 def test_search_product(page: Page):

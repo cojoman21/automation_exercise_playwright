@@ -2,7 +2,7 @@ from typing import Literal, Self
 
 from playwright.sync_api import Locator, Page, expect
 
-from pages.components.consent_popup import ConsentPopup
+from project.pages.components.consent_popup import ConsentPopup
 
 
 class BasePage:

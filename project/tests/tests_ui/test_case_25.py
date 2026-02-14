@@ -1,5 +1,6 @@
-from pages.home_page import HomePage
 from playwright.sync_api import Page
+
+from project.pages.home_page import HomePage
 
 
 def test_verify_scroll_with_arrow(page: Page):

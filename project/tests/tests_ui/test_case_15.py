@@ -1,13 +1,14 @@
-from pages.account_created_page import AccountCreatedPage
-from pages.account_deleted_page import AccountDeletedPage
-from pages.auth_page import AuthPage
-from pages.cart_page import CartPage
-from pages.checkout_page import CheckoutPage
-from pages.components.signup_form import SignupForm
-from pages.home_page import HomePage
-from pages.payment_page import PaymentPage
-from pages.payment_successful_page import PaymentSuccessfulPage
 from playwright.sync_api import Page
+
+from project.pages.account_created_page import AccountCreatedPage
+from project.pages.account_deleted_page import AccountDeletedPage
+from project.pages.auth_page import AuthPage
+from project.pages.cart_page import CartPage
+from project.pages.checkout_page import CheckoutPage
+from project.pages.components.signup_form import SignupForm
+from project.pages.home_page import HomePage
+from project.pages.payment_page import PaymentPage
+from project.pages.payment_successful_page import PaymentSuccessfulPage
 
 
 def test_place_order_and_register_before_checkout(page: Page, random_user):

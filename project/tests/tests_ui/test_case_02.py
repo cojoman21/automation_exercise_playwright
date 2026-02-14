@@ -1,9 +1,10 @@
-from pages.account_created_page import AccountCreatedPage
-from pages.account_deleted_page import AccountDeletedPage
-from pages.auth_page import AuthPage
-from pages.components.signup_form import SignupForm
-from pages.home_page import HomePage
 from playwright.sync_api import Page
+
+from project.pages.account_created_page import AccountCreatedPage
+from project.pages.account_deleted_page import AccountDeletedPage
+from project.pages.auth_page import AuthPage
+from project.pages.components.signup_form import SignupForm
+from project.pages.home_page import HomePage
 
 
 def test_register_user(page: Page, session_user):

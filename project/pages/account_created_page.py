@@ -1,6 +1,6 @@
 from playwright.sync_api import Page
 
-from pages.base_page import BasePage
+from project.pages.base_page import BasePage
 
 
 class AccountCreatedPage(BasePage):

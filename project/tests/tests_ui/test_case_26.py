@@ -1,6 +1,7 @@
 import pytest_check as check
-from pages.home_page import HomePage
 from playwright.sync_api import Page, expect
+
+from project.pages.home_page import HomePage
 
 
 def test_verify_scroll_without_arrow(page: Page):
