@@ -1,4 +1,5 @@
 automation_exercise_playwright\
+    .github\workflows\playwright.yml
     project\
         \data # some data for specific tests like login with existing user
         \downloads # used for downloads during tests
@@ -7,7 +8,6 @@ automation_exercise_playwright\
         \test-results
         \tests
     .venv\
-    .gitignore
     .python-version
     main.py
     pyproject.toml
