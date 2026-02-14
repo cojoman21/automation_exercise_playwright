@@ -26,7 +26,7 @@ class ContactPage(BasePage, NavigationModule, SubscriptionSection):
         self.SUBJECT.fill(user_data["subject"])
         self.MESSAGE.fill(user_data["message"])
 
-        self._upload_file(self.UPLOAD_BUTTON, user_data["path"])
+        self._upload_file(self.UPLOAD_BUTTON, user_data["upload_path"])
         self._dialog_listener()
 
         self.SUBMIT_BUTTON.click()

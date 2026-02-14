@@ -78,7 +78,7 @@ def test_download_invoice_after_purchase_order(page: Page, random_user):
     payment_successful_page = PaymentSuccessfulPage(page).wait_for_load()
 
     # 19. Click 'Download Invoice' button and verify invoice is downloaded successfully.
-    payment_successful_page.download_invoice()
+    payment_successful_page.download_invoice(random_user)
 
     # 20. Click 'Continue' button
     payment_successful_page.click_continue()

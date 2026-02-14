@@ -12,13 +12,13 @@ class PaymentSuccessfulPage(BasePage, NavigationModule, SubscriptionSection):
         super().__init__(page)
         self.READY_LOCATOR: Locator = page.get_by_test_id("order-placed")
 
-    def download_invoice(self) -> Self:
+    def download_invoice(self, user_data: dict) -> Self:
         with self.page.expect_download() as download_invoice:
             self.page.get_by_role("link", name="Download Invoice").click()
 
         download = download_invoice.value
 
-        download.save_as("./project/downloads/invoice.txt")
+        download.save_as(user_data["download_path"])
         return self
 
     def click_continue(self):

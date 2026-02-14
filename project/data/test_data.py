@@ -1,5 +1,3 @@
-
-
 NEW_USER: dict = {
     "name": "John Doe",
     "title": True,
@@ -24,7 +22,8 @@ NEW_USER: dict = {
     "card_cvc": "567",
     "card_month": "10",
     "card_year": "2031",
-    "path": "./upload_test.txt",
+    "upload_path": "./project/upload_test.txt",
+    "download_path": "./project/download/invoice.txt",
 }
 
 EXISTING_USER: dict = {
@@ -51,7 +50,8 @@ EXISTING_USER: dict = {
     "card_cvc": "567",
     "card_month": "10",
     "card_year": "2031",
-    "path": "./upload_test.txt",
+    "upload_path": "./project/upload_test.txt",
+    "download_path": "./project/download/invoice.txt",
 }
 
 WRONG_USER: dict = {
@@ -78,5 +78,6 @@ WRONG_USER: dict = {
     "card_cvc": "567",
     "card_month": "10",
     "card_year": "2031",
-    "path": "./upload_test.txt",
+    "upload_path": "./project/upload_test.txt",
+    "download_path": "./project/download/invoice.txt",
 }
