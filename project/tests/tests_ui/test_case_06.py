@@ -23,6 +23,9 @@ def test_contact_us_form(page: Page, random_user):
     # 9. Click OK button
     # 10. Verify success message 'Success! Your details have been submitted successfully.' is visible
     contact_page.fill_contact_us_form_and_submit(random_user)
+    contact_page.check_special_home_post_contact_us_success_visible()
+    contact_page.check_contact_us_success_message_visible()
 
     # 11. Click 'Home' button and verify that landed to home page successfully
+    contact_page.click_special_home_post_contact_us_success()
     home_page.wait_for_load()
