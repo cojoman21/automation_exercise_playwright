@@ -1,0 +1,11 @@
+{
+    "cSpell.words": [
+        "autouse"
+    ],
+    "python.testing.pytestArgs": [
+        "project"
+    ],
+    "python.testing.unittestEnabled": false,
+    "python.testing.pytestEnabled": true,
+    "python-envs.pythonProjects": []
+}
