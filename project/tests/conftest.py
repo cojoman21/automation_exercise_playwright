@@ -4,8 +4,19 @@ import pytest
 from playwright.sync_api import Page, Playwright
 
 
+@pytest.fixture(scope="session", autouse=True)
+def cleanup_session_user_api(page: Page, session_user):
+    yield
+
+    print(f"\nCleaning up session user:{session_user['email']}")
+    page.request.delete(
+        "https://automationexercise.com/api/deleteAccount",
+        form={"email": session_user["email"], "password": session_user["password"]},
+    )
+
+
 @pytest.fixture(autouse=True)
-def cleanup_user_api(page: Page, random_user):
+def cleanup_random_user_api(page: Page, random_user):
     page.request.delete(
         "https://automationexercise.com/api/deleteAccount",
         form={"email": random_user["email"], "password": random_user["password"]},
