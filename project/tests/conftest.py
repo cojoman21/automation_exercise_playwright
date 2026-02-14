@@ -1,4 +1,5 @@
 import re
+import uuid
 
 import pytest
 from playwright.sync_api import Playwright
@@ -67,10 +68,13 @@ def block_ads(page):
 
 @pytest.fixture(scope="function")
 def random_user(faker):
+    unique_id = str(uuid.uuid4())[:5]
+    email = f"test_{unique_id}_{faker.email()}"
+
     return {
         "name": faker.name(),
         "title": True,
-        "email": faker.email(),
+        "email": email,
         "password": faker.password(length=12),
         "day": str(faker.random_int(min=1, max=28)),
         "month": str(faker.random_int(min=1, max=12)),
