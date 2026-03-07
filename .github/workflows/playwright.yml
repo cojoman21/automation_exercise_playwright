@@ -24,10 +24,10 @@ jobs:
 
       - name: Run Playwright tests
         run: |
-          mkdir -p ./test-results
           uv run pytest \
-            --md-report --md-report-output ./test-results/report.md --md-report-color never \
-            --html=./test-results/report.html --self-contained-html
+            --md-report --md-report-output ./test-results/report.md \
+            --html=./test-results/report.html --self-contained-html \
+            --output=./test-results/traces/
       
       - name: Add Report to Summary
         if: always()
@@ -44,5 +44,5 @@ jobs:
         if: failure()
         uses: actions/upload-artifact@v4
         with:
-          name: playwright-Traces
-          path: ./test-results/failed/
+          name: playwright-traces
+          path: ./test-results/traces/
