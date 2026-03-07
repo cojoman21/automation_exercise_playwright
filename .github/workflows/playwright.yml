@@ -1,43 +1,46 @@
 name: Playwright Tests
-on:
-  push:
-    branches: [ master]
-  pull_request:
-    branches: [ master]
+on: [push, pull_request, workflow_dispatch]
 
 jobs:
   tests:
-    timeout-minutes: 60
+    timeout-minutes: 15
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
 
-      - name: Set up Python
-        uses: actions/setup-python@v4
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
         with:
-          python-version: '3.11'
+          enable-cache: true
+
+      - name: Set up Python
+        run: uv python install 3.12
         
       - name: Install dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install -r requirements.txt
+        run: uv sync --frozen
       
       - name: Ensure browsers are installed
-        run: python -m playwright install --with-deps
+        run: uv run playwright install --with-deps
 
       - name: Run Playwright tests
-        run: pytest --junitxml=results.xml
+        run: uv run pytest \
+              --md-report --md-report-output reports/report.md --md-report-color never \
+              --html=reports/report.html --self-contained-html
 
-      - name: Upload Test results
+      - name: Add Report to Summary
+        if: always()
+        run: cat reports/report.md >> $GITHUB_STEP_SUMMARY
+      
+      - name: Upload HTML Report
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: pytest-results
-          path: results.xml
-      
+          name: automationexercise.com-playwright-test-report
+          path: reports/report.html
+
       - name: Upload Playwright Traces
         if: failure()
         uses: actions/upload-artifact@v4
         with:
           name: playwright-Traces
-          path: test-results/
+          path: results/failed/
