@@ -24,23 +24,23 @@ jobs:
 
       - name: Run Playwright tests
         run: uv run pytest \
-              --md-report --md-report-output reports/report.md --md-report-color never \
-              --html=reports/report.html --self-contained-html
+              --md-report --md-report-output test-results/report.md --md-report-color never \
+              --html=test-results/report.html --self-contained-html
 
       - name: Add Report to Summary
         if: always()
-        run: cat reports/report.md >> $GITHUB_STEP_SUMMARY
+        run: cat test-results/report.md >> $GITHUB_STEP_SUMMARY
       
       - name: Upload HTML Report
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: automationexercise.com-playwright-test-report
-          path: reports/report.html
+          path: test-results/report.html
 
       - name: Upload Playwright Traces
         if: failure()
         uses: actions/upload-artifact@v4
         with:
           name: playwright-Traces
-          path: results/failed/
+          path: test-results/failed/
