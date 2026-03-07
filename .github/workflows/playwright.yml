@@ -23,10 +23,12 @@ jobs:
         run: uv run playwright install --with-deps
 
       - name: Run Playwright tests
-        run: uv run pytest \
-              --md-report --md-report-output ./test-results/report.md --md-report-color never \
-              --html=./test-results/report.html --self-contained-html
-
+        run: |
+          mkdir -p test-results
+          uv run pytest \
+            --md-report --md-report-output ./test-results/report.md --md-report-color never \
+            --html=./test-results/report.html --self-contained-html
+      
       - name: Add Report to Summary
         if: always()
         run: cat ./test-results/report.md >> $GITHUB_STEP_SUMMARY
