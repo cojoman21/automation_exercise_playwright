@@ -48,6 +48,7 @@ def test_place_order_and_register_before_checkout(page: Page, random_user):
 
     # 11. Click Proceed To Checkout
     cart_page.click_on_proceed_to_checkout()
+    cart_page.page.wait_for_url("**/checkout", timeout=5000)
 
     # 12. Verify Address Details and Review Your Order
     checkout_page = CheckoutPage(page).wait_for_load()

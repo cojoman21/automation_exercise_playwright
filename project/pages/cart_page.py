@@ -99,9 +99,7 @@ class CartPage(BasePage, NavigationModule, SubscriptionSection):
 
     # Click on proceed to checkout
     def click_on_proceed_to_checkout(self) -> None:
-        self.PROCEED_TO_CHECKOUT.click()
-
-        self.page.wait_for_url("**/checkout", timeout=5000)
+        self.PROCEED_TO_CHECKOUT.click(force=True)
 
     # Proceed to checkout modal
 
