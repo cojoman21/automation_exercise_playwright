@@ -24,7 +24,7 @@ jobs:
 
       - name: Run Playwright tests
         run: |
-          mkdir -p test-results
+          mkdir -p ./test-results
           uv run pytest \
             --md-report --md-report-output ./test-results/report.md --md-report-color never \
             --html=./test-results/report.html --self-contained-html
