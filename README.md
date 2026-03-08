@@ -40,20 +40,20 @@ docker run cojoman1/automation_exercise_playwright-playwright-tests:latest
 <h5 a><strong><code>powershell</code></strong></h5>
 
 ```sh
-git clone https://github.com/cojoman21/ #TODO
+git clone https://github.com/cojoman21/automation_exercise_playwright.git
 ```
 
-#### Alternatively you can manually download the repository from this [link](#TODO)
+#### Alternatively you can manually download the repository from this [link](https://github.com/cojoman21/automation_exercise_playwright)
 
 ### 2. Navigate into the root project directory
 
 <h5 a><strong><code>powershell</code></strong></h5>
 
 ```sh
-cd #TODO
+cd automation_exercise_playwright
 ```
 
-### 3️⃣ Initialize the project
+### 3. Initialize the project
 
 <h5 a><strong><code>powershell</code></strong></h5>
 
@@ -71,7 +71,7 @@ This uses `uv.lock` to re-create the virtual environment with all the requiremen
 <h5 a><strong><code>powershell</code></strong></h5>
 
 ```sh
-uv run pytest project/tests/test_case_01.py
+uv run pytest tests/tests_UI/test_case_01_register.py
 ```
 
 ### 2. Running the whole test suite:
