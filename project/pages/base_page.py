@@ -39,12 +39,6 @@ class BasePage:
 
     # ---------- Validation ----------
     # this is used to get the text inside an element (doesn't work for inputs)
-    def get_text(self, locator: Locator) -> str:
-        return locator.inner_text()
-
-    # used to get the value inside inputs
-    def get_value(self, locator: Locator) -> str:
-        return locator.input_value()
 
     # used to check if an element is visible
     def assert_visible(self, locator: Locator):

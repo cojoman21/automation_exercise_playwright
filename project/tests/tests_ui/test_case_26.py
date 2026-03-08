@@ -1,5 +1,4 @@
-import pytest_check as check
-from playwright.sync_api import Page, expect
+from playwright.sync_api import Page
 
 from project.pages.home_page import HomePage
 
