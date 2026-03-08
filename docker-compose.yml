@@ -1,0 +1,9 @@
+services:
+  playwright-tests:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ipc: host
+    restart: "no"
+    environment:
+      - PYTEST_ADDOPTS=--color=yes
